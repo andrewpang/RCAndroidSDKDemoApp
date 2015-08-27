@@ -14,7 +14,7 @@ import com.ringcentral.rc_android_sdk.rcsdk.platform.Helpers;
 
 public class OptionsActivity extends ActionBarActivity implements View.OnClickListener{
 
-    Button button1, button2;
+    Button button1, button2, button3, button4;
     SDK sdk;
     Helpers helpers;
 
@@ -29,6 +29,10 @@ public class OptionsActivity extends ActionBarActivity implements View.OnClickLi
         button1.setOnClickListener(this);
         button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
+        button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(this);
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +50,18 @@ public class OptionsActivity extends ActionBarActivity implements View.OnClickLi
                 Intent logIntent = new Intent(OptionsActivity.this, CallLogActivity.class);
                 logIntent.putExtra("MyRcsdk", sdk);
                 startActivity(logIntent);
+                break;
+
+            case R.id.button3:
+                Intent smsIntent = new Intent(OptionsActivity.this, SMSActivity.class);
+                smsIntent.putExtra("MyRcsdk", sdk);
+                startActivity(smsIntent);
+                break;
+
+            case R.id.button4:
+                Intent ringoutIntent = new Intent(OptionsActivity.this, RingOutActivity.class);
+                ringoutIntent.putExtra("MyRcsdk", sdk);
+                startActivity(ringoutIntent);
                 break;
         }
     }

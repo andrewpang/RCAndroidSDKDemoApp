@@ -13,13 +13,23 @@
         android:layout_marginTop="50dp"
         android:textColor="#ffffffff"/>
     <EditText android:id="@+id/editText1" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Username" android:layout_below="@+id/textView1" android:layout_marginTop="50dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
+        android:hint="Username" android:layout_below="@+id/textView1" android:layout_marginTop="10dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
     <EditText android:id="@+id/editText2" android:layout_width="match_parent" android:layout_height="wrap_content"
         android:hint="Extension" android:layout_below="@+id/editText1" android:layout_marginTop="10dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
     <EditText android:id="@+id/editText3" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content"
         android:hint="Password" android:layout_below="@+id/editText2" android:layout_marginTop="10dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
+
+    <EditText android:id="@+id/editText4"  android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="App Key" android:layout_below="@+id/editText3" android:layout_marginTop="10dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
+    <EditText android:id="@+id/editText5" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="App Secret" android:layout_below="@+id/editText4" android:layout_marginTop="10dp" android:textColor="#ffffffff" android:textColorHint="#FFFFFF"/>
+    <CheckBox
+        android:id="@+id/checkPrompt" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Production(Sandbox, if unchecked)" android:layout_below="@id/editText5" android:layout_marginTop="10dp"
+        android:button="@null" android:textColor="#ffffffff" android:drawableRight="?android:attr/listChoiceIndicatorMultiple"/>
+
     <Button android:id="@+id/button1" android:layout_height="wrap_content"
-        android:layout_width="wrap_content" android:text="Authorize" android:layout_below="@+id/editText3"
+        android:layout_width="wrap_content" android:text="Authorize" android:layout_below="@+id/checkPrompt"
         android:layout_marginTop="30dp" android:background="#ffffffff"/>
 
 </RelativeLayout>

@@ -8,9 +8,15 @@
 
     <Button android:id="@+id/button1" android:layout_height="wrap_content"
         android:layout_width="match_parent" android:text="Call Status"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="20dp" />
     <Button android:id="@+id/button2" android:layout_height="wrap_content"
         android:layout_width="match_parent" android:text="Call Log"
-        android:layout_marginTop="30dp" android:layout_below="@id/button1"/>
+        android:layout_marginTop="20dp" android:layout_below="@id/button1"/>
+    <Button android:id="@+id/button3" android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:text="Send SMS"
+        android:layout_marginTop="20dp" android:layout_below="@id/button2"/>
+    <Button android:id="@+id/button4" android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:text="RingOut"
+        android:layout_marginTop="20dp" android:layout_below="@id/button3"/>
 
 </RelativeLayout>

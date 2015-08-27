@@ -14,15 +14,11 @@ import com.ringcentral.rc_android_sdk.rcsdk.*;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     Button button1;
-    String appKey = "xhK3uzISTEaEYhFAtadVug";
-    String appSecret = "1YRoPu64TeCOe_ZJy3ggLwGg-QDQd6QaWpSyIT8AxmjA";
-    SDK SDK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SDK = new SDK(appKey, appSecret, "SANDBOX");
         button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(this);
     }
@@ -34,7 +30,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
             case R.id.button1:
                 Intent authIntent = new Intent(MainActivity.this, AuthActivity.class);
-                authIntent.putExtra("MyRcsdk", SDK);
                 startActivity(authIntent);
                 break;
         }

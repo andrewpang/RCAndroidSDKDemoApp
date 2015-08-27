@@ -37,6 +37,14 @@
             android:name=".CallLogActivity"
             android:label="@string/title_activity_call_log" >
         </activity>
+        <activity
+            android:name=".SMSActivity"
+            android:label="@string/title_activity_sms" >
+        </activity>
+        <activity
+            android:name=".RingOutActivity"
+            android:label="@string/title_activity_ring_out" >
+        </activity>
     </application>
 
 </manifest>

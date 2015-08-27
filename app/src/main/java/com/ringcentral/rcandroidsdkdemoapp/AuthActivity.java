@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.ringcentral.rc_android_sdk.rcsdk.SDK;
@@ -24,21 +25,23 @@ public class AuthActivity extends ActionBarActivity implements View.OnClickListe
 
     SDK sdk;
     Helpers helpers;
-    EditText editText1, editText2, editText3;
+    EditText editText1, editText2, editText3, editText4, editText5;
     Button button1;
+    CheckBox checkPrompt;
+    String hasPrompt = "SANDBOX";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        Intent intent = getIntent();
-        sdk = (SDK) intent.getSerializableExtra("MyRcsdk");
-        helpers = sdk.getHelpers();
         editText1 = (EditText)findViewById(R.id.editText1);
         editText2 = (EditText)findViewById(R.id.editText2);
         editText3 = (EditText)findViewById(R.id.editText3);
+        editText4 = (EditText)findViewById(R.id.editText4);
+        editText5 = (EditText)findViewById(R.id.editText5);
         button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(this);
+        addListenerOnCheckBox();
     }
 
     @Override
@@ -47,6 +50,14 @@ public class AuthActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.button1:
+
+                String appKey = editText4.getText().toString();
+                String appSecret = editText5.getText().toString();
+                //Hardcoded
+                appKey = "xhK3uzISTEaEYhFAtadVug";
+                appSecret = "1YRoPu64TeCOe_ZJy3ggLwGg-QDQd6QaWpSyIT8AxmjA";
+                sdk = new SDK(appKey, appSecret, hasPrompt);
+                helpers = sdk.getHelpers();
                 String username = editText1.getText().toString();
                 String extension = editText2.getText().toString();
                 String password = editText3.getText().toString();
@@ -77,6 +88,21 @@ public class AuthActivity extends ActionBarActivity implements View.OnClickListe
                 break;
         }
     }
+
+    public void addListenerOnCheckBox() {
+        checkPrompt = (CheckBox) findViewById(R.id.checkPrompt);
+        checkPrompt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(((CheckBox) v).isChecked()) {
+                    hasPrompt = "PRODUCTION";
+                }else{
+                    hasPrompt = "SANDBOX";
+                }
+            }
+        });
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
