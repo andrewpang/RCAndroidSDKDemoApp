@@ -22,8 +22,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile project(':rc_android_sdk-0.0.4 (1)')
-    //compile 'com.ringcentral.rcandroidsdk:rc_android_sdk:0.0.4'
+    //compile project(':rc_android_sdk-0.0.4 (1)')
+    compile 'com.ringcentral.rcandroidsdk:rc_android_sdk:0.0.4'
+    //compile(group: 'com.ringcentral.rcandroidsdk', name: 'rc_android_sdk', version: '0.0.4', ext: 'aar')
     /*
     This dependency is for the Gson library. For more information visit:
     https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
