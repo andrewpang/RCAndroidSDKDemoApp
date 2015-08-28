@@ -53,17 +53,11 @@ public class AuthActivity extends ActionBarActivity implements View.OnClickListe
 
                 String appKey = editText4.getText().toString();
                 String appSecret = editText5.getText().toString();
-                //Hardcoded
-                appKey = "xhK3uzISTEaEYhFAtadVug";
-                appSecret = "1YRoPu64TeCOe_ZJy3ggLwGg-QDQd6QaWpSyIT8AxmjA";
                 sdk = new SDK(appKey, appSecret, hasPrompt);
                 helpers = sdk.getHelpers();
                 String username = editText1.getText().toString();
                 String extension = editText2.getText().toString();
                 String password = editText3.getText().toString();
-                //Hardcoded for ease of testing
-                username = "15856234166";
-                password = "P@ssw0rd";
                 helpers.authorize(username, extension, password,
                         new Callback() {
                             @Override
